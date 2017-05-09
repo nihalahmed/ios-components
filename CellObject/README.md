@@ -1,23 +1,16 @@
-# MyLibrary
+# CellObject
 
-[![CI Status](http://img.shields.io/travis/nihalahmed/MyLibrary.svg?style=flat)](https://travis-ci.org/nihalahmed/MyLibrary)
-[![Version](https://img.shields.io/cocoapods/v/MyLibrary.svg?style=flat)](http://cocoapods.org/pods/MyLibrary)
-[![License](https://img.shields.io/cocoapods/l/MyLibrary.svg?style=flat)](http://cocoapods.org/pods/MyLibrary)
-[![Platform](https://img.shields.io/cocoapods/p/MyLibrary.svg?style=flat)](http://cocoapods.org/pods/MyLibrary)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+[![Version](https://img.shields.io/badge/pod-v1.0.0-blue.svg)]
+[![License](https://img.shields.io/badge/license-MIT-orange.svg)]
+[![Platform](https://img.shields.io/badge/platform-ios-red.svg)]
 
 ## Installation
 
-MyLibrary is available through [CocoaPods](http://cocoapods.org). To install
+CellObject is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "MyLibrary"
+pod 'CellObject', :git => 'https://github.com/Wattpad/ios-components.git'
 ```
 
 ## Author
