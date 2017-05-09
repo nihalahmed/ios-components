@@ -78,6 +78,36 @@ class MyItem: CellObject, CellObjectDisplay {
 }
 ```
 
+CellObjects can use the `cellObjectDelegate` property to get or update the cell currently used to display the CellObject. The example below gets the current cell used to display `MyItem` and changes the color to blue.
+
+```swift
+extension MyItem {
+    func refreshCell() {
+        if let cell = cellObjectDelegate?.cellObjectCell(self) {
+            cell.contentView.backgroundColor = .blue
+        }
+    }
+}
+```
+
+You can take advantage of the `CellObjectCollectionView` by creating a data model of CellObjects and passing it to the view.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    let collectionView = CellObjectCollectionView()
+    collectionView = view.bounds
+    view.addSubview(collectionView)
+
+    let item = MyItem()
+    item.cellObjectDelegate = collectionView
+
+    let dataModel = TLIndexPathDataModel(items: [item])
+    collectionView.setDataModel(dataModel, true)
+}
+```
+
 ## Author
 
 nihalahmed, nihal.cool@gmail.com
