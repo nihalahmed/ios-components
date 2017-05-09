@@ -8,6 +8,14 @@ CellObject provides a set of protocols which allows the data source to drive col
 
 The library also provides a CellObjectCollectionView which is specifically designed to use CellObjects. It has a very simple interface and takes in a data model of CellObjects. This allows for the caller to only worry about creating and setting the right data model.
 
+## Installation
+
+CellObject is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod 'CellObject', :git => 'https://github.com/Wattpad/ios-components.git'
+```
+
 ## Usage
 
 It is very simple to get started with CellObject. Simply make the object to be used in the data model conform to the CellObject protocol.
@@ -68,15 +76,6 @@ class MyItem: CellObject, CellObjectDisplay {
     }
 
 }
-```
-
-## Installation
-
-CellObject is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'CellObject', :git => 'https://github.com/Wattpad/ios-components.git'
 ```
 
 ## Author
