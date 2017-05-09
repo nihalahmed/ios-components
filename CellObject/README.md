@@ -20,7 +20,7 @@ pod 'CellObject', :git => 'https://github.com/Wattpad/ios-components.git'
 
 It is very simple to get started with CellObject. Simply make the object to be used in the data model conform to the CellObject protocol.
 
-The example below makes `MyItem` conform to `CellObject` and uses the UICollectionViewCell to display the item. It is configured to have a red color and of size 100x100.
+The example below makes `MyItem` conform to `CellObject` and uses a UICollectionViewCell to display the item. It is configured to have a red color and a size of 100x100.
 
 ```swift
 class MyItem: CellObject {
@@ -82,11 +82,13 @@ CellObjects can use the `cellObjectDelegate` property to get or update the cell 
 
 ```swift
 extension MyItem {
+
     func refreshCell() {
         if let cell = cellObjectDelegate?.cellObjectCell(self) {
             cell.contentView.backgroundColor = .blue
         }
     }
+
 }
 ```
 
@@ -96,8 +98,7 @@ You can take advantage of the `CellObjectCollectionView` by creating a data mode
 override func viewDidLoad() {
     super.viewDidLoad()
     
-    let collectionView = CellObjectCollectionView()
-    collectionView = view.bounds
+    let collectionView = CellObjectCollectionView(frame: view.bounds)
     view.addSubview(collectionView)
 
     let item = MyItem()
