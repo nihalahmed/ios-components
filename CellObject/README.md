@@ -8,12 +8,65 @@ CellObject provides a set of protocols which allows the data source to drive col
 
 The library also provides a CellObjectCollectionView which is specifically designed to use CellObjects. It has a very simple interface and takes in a data model of CellObjects. This allows for the caller to only worry about creating and setting the right data model.
 
-## Example
+## Usage
 
 It is very simple to get started with CellObject. Simply make the object to be used in the data model conform to the CellObject protocol.
 
+The example below makes `MyItem` conform to `CellObject` and uses the UICollectionViewCell to display the item. It is configured to have a red color and of size 100x100.
+
 ```swift
 class MyItem: CellObject {
+
+    var cellObjectComponent: CellObjectComponent
+
+    init() {
+        cellObjectComponent = CellObjectComponent(UICollectionViewCell.self)
+        configBlock = { cell in
+            cell.contentView.backgroundColor = .red
+        }
+        sizeBlock = { size in
+           return CGSize(width: 100.0, height: 100.0)
+        }
+    }
+
+}
+```
+
+`MyItem` can also be configured to handle selection callbacks by having it conform to `CellObjectSelect`.
+
+```swift
+class MyItem: CellObject, CellObjectSelect {
+
+    var cellObjectComponent: CellObjectComponent
+    var cellObjectSelectComponent = CellObjectSelectComponent()
+
+    init() {
+        cellObjectComponent = CellObjectComponent(UICollectionViewCell.self)
+        // Set the configBlock and sizeBlock.
+        selectBlock = {
+            // Open the item.
+        }
+    }
+
+}
+```
+
+`MyItem` can further be configured to handle display callbacks by having it conform to `CellObjectDisplayComponent`.
+
+```swift
+class MyItem: CellObject, CellObjectDisplay {
+
+    var cellObjectComponent: CellObjectComponent
+    var cellObjectDisplayComponent = CellObjectDisplayComponent()
+
+    init() {
+        cellObjectComponent = CellObjectComponent(UICollectionViewCell.self)
+        // Set the configBlock and sizeBlock.
+        willDisplayBlock = { cell in
+            // Configure the cell before it will be displayed.
+        }
+    }
+
 }
 ```
 
