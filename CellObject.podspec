@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => 'CellObject/LICENSE' }
   s.author       = { "Nihal Ahmed" => "nihal.cool@gmail.com" }
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/nihalahmed/ios-components.git" }
+  s.source       = { :git => "https://github.com/nihalahmed/ios-components.git", :tag => "1.0.0" }
   s.source_files = "CellObject/CellObject/Source/**/*.swift"
   s.dependency "TLIndexPathTools"
 end
