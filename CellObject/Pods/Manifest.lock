@@ -1,0 +1,12 @@
+PODS:
+  - TLIndexPathTools (0.4.4)
+
+DEPENDENCIES:
+  - TLIndexPathTools (= 0.4.4)
+
+SPEC CHECKSUMS:
+  TLIndexPathTools: 956bf0686bcd5e7dc8e2c408d28e7a312ec268a1
+
+PODFILE CHECKSUM: ace70ebf8ce904efca53c35f9778bf31cc670c2f
+
+COCOAPODS: 1.2.0
