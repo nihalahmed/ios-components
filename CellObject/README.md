@@ -1,8 +1,8 @@
 # CellObject
 
-[![Version](https://img.shields.io/badge/pod-v1.0.0-blue.svg)]
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)]
-[![Platform](https://img.shields.io/badge/platform-ios-red.svg)]
+![Version](https://img.shields.io/badge/pod-v1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![Platform](https://img.shields.io/badge/platform-ios-red.svg)
 
 ## Installation
 
