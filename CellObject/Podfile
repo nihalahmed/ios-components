@@ -2,5 +2,5 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'CellObject' do
-  pod 'TLIndexPathTools', '0.4.4' :inhibit_warnings => true
+  pod 'TLIndexPathTools', '0.4.4'
 end
