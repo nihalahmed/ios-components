@@ -37,6 +37,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// Refreshes the size of the cell.
 - (void)cellObjectSizeChanged:(id<CellObject>)cellObject;
 
+/// Deselects the cell.
+- (void)cellObjectDeselect:(id<CellObject>)object;
+
+/// Deletes the cell object.
+- (void)cellObjectDelete:(id<CellObject>)object;
+
 @end
 
 NS_ASSUME_NONNULL_END
