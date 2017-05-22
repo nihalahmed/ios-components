@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.author       = { "Nihal Ahmed" => "nihal.cool@gmail.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/nihalahmed/ios-components.git", :tag => "1.0.0" }
-  s.header_files = "CellObject/CellObjectObjc/Source/**/*.h"
-  s.source_files = "CellObject/CellObjectObjc/Source/**/*.m"
+  s.source_files = "CellObject/CellObjectObjc/Source/**/*.{h,m}"
   s.dependency "TLIndexPathTools"
 end
