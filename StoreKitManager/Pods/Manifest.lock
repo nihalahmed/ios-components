@@ -1,0 +1,19 @@
+PODS:
+  - OpenSSL-iOS (1.0.204):
+    - OpenSSL-iOS/Framework (= 1.0.204)
+  - OpenSSL-iOS/Framework (1.0.204)
+  - RMStoreWP/AppReceiptVerifier (0.7.1.1):
+    - OpenSSL-iOS
+    - RMStoreWP/Core
+  - RMStoreWP/Core (0.7.1.1)
+
+DEPENDENCIES:
+  - RMStoreWP/AppReceiptVerifier (= 0.7.1.1)
+
+SPEC CHECKSUMS:
+  OpenSSL-iOS: 002cabfdfc2df48d63cebd723b90ada86c946316
+  RMStoreWP: b8f98c925763d3f3e069dca16136424764c171ff
+
+PODFILE CHECKSUM: a2315c09b0b06225fb9b601a8e300903d318e016
+
+COCOAPODS: 1.2.1

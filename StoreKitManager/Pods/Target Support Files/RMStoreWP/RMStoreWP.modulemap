@@ -1,0 +1,6 @@
+framework module RMStoreWP {
+  umbrella header "RMStoreWP-umbrella.h"
+
+  export *
+  module * { export * }
+}
