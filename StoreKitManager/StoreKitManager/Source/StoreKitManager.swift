@@ -10,7 +10,7 @@ import Foundation
 import RMStoreWP
 
 /// Error codes for the manager.
-enum StoreKitManagerError : Int {
+public enum StoreKitManagerError : Int {
     
     static let domain = "StoreKitManagerErrorDomain"
     
@@ -23,7 +23,7 @@ enum StoreKitManagerError : Int {
 }
 
 /// Handles in app purchases, restoring purchases and providing subscription information.
-class StoreKitManager {
+public class StoreKitManager {
     
     private var rmStore: RMStore
     
@@ -31,7 +31,7 @@ class StoreKitManager {
     /// It is updated when a product is purchased or purchases are restored.
     private var appReceiptVerified = false
     
-    init(rmStore: RMStore) {
+    public init(rmStore: RMStore) {
         self.rmStore = rmStore
         setUp()
     }
@@ -49,7 +49,7 @@ class StoreKitManager {
     ///
     /// - Parameters:
     ///     - productIdentifier: The product identifier of the subscription.
-    func isAutoRenewableSubscriptionActive(productIdentifier: String) -> Bool {
+    public func isAutoRenewableSubscriptionActive(productIdentifier: String) -> Bool {
         guard let receipt = RMAppReceipt.bundle() else {
             logDebugMsg(msg: "Failed to check subscription status because app receipt could not be found.")
             return false
@@ -62,7 +62,7 @@ class StoreKitManager {
     }
     
     /// Returns true if any subscription is active.
-    func isAnyAutoRenewableSubscriptionActive() -> Bool {
+    public func isAnyAutoRenewableSubscriptionActive() -> Bool {
         guard let receipt = RMAppReceipt.bundle() else {
             logDebugMsg(msg: "Failed to check subscription status because app receipt could not be found.")
             return false
@@ -90,7 +90,7 @@ class StoreKitManager {
     ///     - success: Set to true if the purchase was successful.
     ///     - product: The product that was purchased. Returned if success is true.
     ///     - error: The error that occurred when purchasing. Returned if success is false.
-    func purchaseProduct(productIdentifier: String, completion: @escaping (_ success: Bool, _ product: SKProduct?, _ error: NSError?) -> Void) {
+    public func purchaseProduct(productIdentifier: String, completion: @escaping (_ success: Bool, _ product: SKProduct?, _ error: NSError?) -> Void) {
         if let product = rmStore.product(forIdentifier: productIdentifier) {
             logDebugMsg(msg: "Product found for identifier \(productIdentifier). Adding payment.")
             purchaseValidProduct(productIdentifier: productIdentifier, completion: { (success, error) in
@@ -131,7 +131,7 @@ class StoreKitManager {
     ///     - completion: The block to be called upon completion.
     ///     - success: Set to true if the restore was successful.
     ///     - error: The error that occurred when restoring. Returned if success is false.
-    func restoreTransactions(completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+    public func restoreTransactions(completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         rmStore.restoreTransactions(onSuccess: { (transactions) in
             self.logDebugMsg(msg: "Restored transactions.")
             if !self.appReceiptVerified {
@@ -159,7 +159,7 @@ class StoreKitManager {
     ///     - products: Mapping of product identifiers to their products. Returned if success is true.
     ///     - invalid: A list of invalid product identifiers. Returned if success is true.
     ///     - error: The error that occurred when fetching information. Returned if success is false.
-    func fetchInfoForProducts(productIdentifiers: Set<String>, completion: @escaping (
+    public func fetchInfoForProducts(productIdentifiers: Set<String>, completion: @escaping (
         _ success: Bool, _ products: [String : SKProduct]?, _ invalid: Set<String>?, _ error: Error?) -> Void) {
         var productsInfo: [String : SKProduct] = [:]
         var productIdentifiersToFetch = Set<String>()
@@ -222,7 +222,7 @@ class StoreKitManager {
     ///
     /// - Parameters:
     ///     - productIdentifier: The identifier of the product.
-    func product(forIdentifier identifier: String) -> SKProduct? {
+    public func product(forIdentifier identifier: String) -> SKProduct? {
         return rmStore.product(forIdentifier: identifier)
     }
     
